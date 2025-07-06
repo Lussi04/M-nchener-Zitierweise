@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Münchener Zitierweise (Fußnote, Deutsch)</title>
+    <id>https://www.zotero.org/styles/munich-footnote-de</id>
+    <link href="https://www.zotero.org/styles/munich-footnote-de" rel="self"/>
+    <author>
+      <name>OpenAI GPT</name>
+    </author>
+    <category citation-format="note"/>
+    <category field="generic-base"/>
+    <updated>2025-07-06T00:00:00+00:00</updated>
+    <language>de-DE</language>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" name-as-sort-order="all" delimiter="/" initialize-with=". "/>
+    </names>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="title">
+    <text variable="title" font-style="italic"/>
+  </macro>
+
+  <macro name="publisher">
+    <group delimiter=", ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+      <text macro="issued"/>
+    </group>
+  </macro>
+
+  <citation>
+    <layout prefix="Vgl. " suffix="." delimiter=", ">
+      <text macro="author"/>
+      <text macro="issued"/>
+      <text variable="page" prefix="S. "/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout delimiter=". " hanging-indent="true">
+      <text macro="author"/>
+      <text macro="issued" prefix=" (" suffix="):"/>
+      <text macro="title"/>
+      <text variable="edition" prefix=", " suffix=". Auflage"/>
+      <text macro="publisher" prefix=", "/>
+    </layout>
+  </bibliography>
+</style>
