@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Münchener Zitierweise (Custom CSL)</title>
+    <id>http://www.zotero.org/styles/munich-footnote-custom</id>
+    <link href="http://www.zotero.org/styles/munich-footnote-custom" rel="self"/>
+    <author>
+      <name>Custom by ChatGPT</name>
+    </author>
+    <category citation-format="note"/>
+    <updated>2025-07-05T00:00:00+00:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter="/" initialize-with=". " name-as-sort-order="all"/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <text variable="title" font-style="italic"/>
+  </macro>
+
+  <macro name="publisher">
+    <group delimiter=", ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+      <text variable="issued"/>
+    </group>
+  </macro>
+
+  <citation>
+    <layout delimiter="; " prefix="Vgl. " suffix="." vertical-align="baseline">
+      <text macro="author"/>
+      <text variable="issued" prefix=", " suffix=""/>
+      <text variable="page" prefix=", S. " suffix=""/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout hanging-indent="true" delimiter=". ">
+      <text macro="author"/>
+      <text variable="issued" prefix=" (" suffix="):"/>
+      <text macro="title" prefix=" "/>
+      <text variable="edition" prefix=", " suffix=". Auflage"/>
+      <text macro="publisher" prefix=", "/>
+    </layout>
+  </bibliography>
+</style>
